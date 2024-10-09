@@ -23,6 +23,8 @@ body {
 .sidebar ul {
     list-style-type: none;
     padding: 0;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 .sidebar ul li {
@@ -32,6 +34,13 @@ body {
 .sidebar ul li a {
     color: white;
     text-decoration: none;
+}
+
+.sidebarname {
+    color: white;
+    text-decoration: none;
+    font-size: 24pt;
+    font-weight: bold;
 }
 
 .sidebar ul li a:hover {
