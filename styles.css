@@ -14,7 +14,7 @@ body {
 
 .sidebar {
     width: 200px;
-    background-color: #333;
+    background-color: #111;
     padding: 10px;
     position: fixed;
     height: 100%;
@@ -53,8 +53,12 @@ body {
     width: 100%;
 }
 
-p, h1, h2 {
+p, h1, h2, h3 {
     color: white;
+}
+
+.ind {
+    margin-left: 25px;
 }
 
 .gallery {
