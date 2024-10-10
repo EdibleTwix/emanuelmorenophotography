@@ -2,10 +2,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: black;
-    /* background-image: url('images/backgroundem.jpeg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; */
 }
 
 .container {
@@ -79,6 +75,12 @@ p, h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
 }
 
 .gallery-item p {
@@ -89,4 +91,51 @@ p, h1, h2, h3 {
 
 .flip {
     flex-direction: column-reverse;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal img {
+    max-width: 80%;
+    max-height: 80%;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.modal.active img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
 }
