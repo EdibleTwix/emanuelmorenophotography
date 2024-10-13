@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script src="scripts/toggleNav.js"></script>
+    <button class="sidebar-toggle"></button>
     <div class="container">
-        <nav class="sidebar">
+        <nav id="sidebar" class="sidebar">
             <ul>
                 <li class="sidebarname">EMANUEL MORENO</li>
                 <li><a href="index.html">Home</a></li>
@@ -17,7 +19,7 @@
                 <li><a href="project2.html">Narrative in Landscape</a></li>
                 <li><a href="project3.html">Conceptual Portraiture</a></li>
             </ul>
-        </nav>
+        </nav>  
 
         <main class="content">
             <section id="project1">
@@ -54,5 +56,8 @@
     </div>    
 
     <script src="scripts/modalDisplay.js"></script>
+
+    <div id="footer"></div>
+    <script src="scripts/loadFooter.js"></script>
 </body>
 </html>

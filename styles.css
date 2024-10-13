@@ -14,13 +14,15 @@ body {
     padding: 10px;
     position: fixed;
     height: 100%;
+    left: 0;
+    transition: left 0.3s ease;
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 0;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .sidebar ul li {
@@ -43,14 +45,30 @@ body {
     text-decoration: underline;
 }
 
-.content {
-    margin-left: 220px;
-    padding: 20px;
-    width: 100%;
+.sidebar.closed {
+    left: -220px;
 }
 
-p, h1, h2, h3 {
+.sidebar-toggle {
+    display: none;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    background-color: #333;
     color: white;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.content {
+    padding: 20px;
+    width: 100%;
+    margin-left: 220px;
 }
 
 .ind {
@@ -105,7 +123,6 @@ p, h1, h2, h3 {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 .modal.active {
@@ -117,7 +134,6 @@ p, h1, h2, h3 {
     max-width: 80%;
     max-height: 80%;
     opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 .modal.active img {
@@ -126,7 +142,6 @@ p, h1, h2, h3 {
 
 .blurred {
     filter: blur(5px);
-    transition: filter 0.3s ease;
 }
 
 .close {
@@ -136,4 +151,51 @@ p, h1, h2, h3 {
     color: white;
     font-size: 40px;
     cursor: pointer;
+}
+
+p, h1, h2, h3, footer {
+    color: white;
+}
+
+footer {
+    padding: 20px;
+    width: calc(100%-220px);
+    margin-left: 220px;
+    box-sizing: border-box;
+}
+
+.social-icons {
+    width: calc(100%-220px);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+small {
+    display: block;
+    text-align: center;
+}
+
+/* Mobile View */
+@media (max-width: 800px) {
+    .sidebar {
+        left: -220px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+        left: 0;
+    }
+    .content {
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    footer {
+        margin-left: 0px;
+    }
 }
