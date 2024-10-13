@@ -111,6 +111,7 @@ body {
     flex-direction: column-reverse;
 }
 
+/* Modal styling */
 .modal {
     display: none;
     position: fixed;
@@ -123,6 +124,7 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .modal.active {
@@ -133,11 +135,50 @@ body {
 .modal img {
     max-width: 80%;
     max-height: 80%;
-    opacity: 0;
+    object-fit: contain;
+    z-index: 1;
+    transition: transform 0.5s ease; 
 }
 
-.modal.active img {
-    opacity: 1;
+/* Rotate image classes */
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.rotate-270 {
+    transform: rotate(270deg);
+}
+
+.rotate-360 {
+    transform: rotate(360deg);
+}
+
+/* Modal controls for rotation */
+.modal-controls {
+    text-align: center;
+    z-index: 10;
+    position: fixed;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal-controls button {
+    background-color: #333;
+    color: #F5F5F5;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-controls button:hover {
+    background-color: #555;
 }
 
 .blurred {
@@ -148,9 +189,10 @@ body {
     position: absolute;
     top: 20px;
     right: 30px;
-    color: white;
+    color: #F5F5F5;
     font-size: 40px;
     cursor: pointer;
+    z-index: 10;
 }
 
 p, h1, h2, h3, footer {
@@ -185,7 +227,7 @@ th {
     height: 1px;
     background-color: #2B2B2B;
     margin: 20px 0;
-  }
+}
 
 footer {
     padding: 20px;
@@ -219,6 +261,7 @@ small {
         display: block;
         left: 0;
     }
+
     .content {
         padding: 20px;
         margin-left: 0;
@@ -226,5 +269,18 @@ small {
 
     footer {
         margin-left: 0px;
+    }
+}
+
+/* Image rotation handling for modal */
+@media (max-width: 600px) {
+    .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .modal-controls button {
+        font-size: 14px;
+        padding: 8px;
     }
 }
