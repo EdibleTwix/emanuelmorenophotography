@@ -24,7 +24,58 @@
         <main class="content">
             <section id="commissions">
                 <h2>Commissions</h2>
-                <p class="ind">To be determined.</p>
+                <p class="ind"><b>FREE PHOTOGRAPHY SESIONS DEAL!</b></p>
+                <p class="ind">Book now before you have a chance! For musicians only, requiring instrument and formal attire in the photographs. Deal expires in <strong>3 sessions</strong>, or by <strong>27 October 2024</strong>. Time remaining: <span id="countdown" style="color: red;">loading</span>.</p>
+                <br>
+                <p class="ind">Contact me first to schedule a session. Be sure to include the date, time, and location.</p>
+                <p class="ind">After contacting me for a session, please pay via PayPal below with your selected session type. Venmo also accepted.</p>
+                <br><hr class="hr-style"><br>
+                <table class="ind" id="centertable">
+                    <tr>
+                        <th>Price</th>
+                        <th>Time</th>
+                        <th>Photos</th>
+                    </tr>
+                    <tr>
+                        <td>$50
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick" />
+                                <input type="hidden" name="hosted_button_id" value="XKN8HVGBJ6P9Q" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+                            </form>
+                        </td>
+                        <td>15 minutes</td>
+                        <td>45 photos</td>
+                    </tr>
+                    <tr>
+                        <td>$70
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick" />
+                                <input type="hidden" name="hosted_button_id" value="L7ADQZ4LC86VL" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+                            </form>
+                        </td>
+                        <td>30 minutes</td>
+                        <td>100 photos</td>
+                    </tr>
+                    <tr>                  
+                        <td style="background-color: goldenrod; color: black;">$100*
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick" />
+                                <input type="hidden" name="hosted_button_id" value="DS64FPEBFUYMY" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+                            </form>
+                        </td>
+                        <td style="background-color: goldenrod; color: black;">60 minutes</td>
+                        <td style="background-color: goldenrod; color: black;">250 photos</td>
+                      </tr>
+                </table>
+                <br>
+                <small class="ind" style="color: white; text-align: left;">* Best value! Save 63.96% compared to the $50 session and gets 205 more photos (5.56 times more photos), or save 42.86% compared to the $70 session and gets 150 more photos (2.5 times more photos).</small>
+                <br>
             </section>
         </main>
     </div>
@@ -38,5 +89,30 @@
 
     <div id="footer"></div>
     <script src="scripts/loadFooter.js"></script>
+
+    <script>
+        var countDownDate = new Date("October 27, 2024 00:00:00").getTime();
+      
+        var countdownFunction = setInterval(function() {
+      
+        var now = new Date().getTime();
+      
+        var distance = countDownDate - now;
+      
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s";
+      
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown").innerHTML = "Expired";
+            }
+        }, 1000);
+      </script>
+      
 </body>
 </html>

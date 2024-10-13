@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: #121212 ;
 }
 
 .container {
@@ -10,7 +10,7 @@ body {
 
 .sidebar {
     width: 200px;
-    background-color: #111;
+    background-color: #1C1C1C ;
     padding: 10px;
     position: fixed;
     height: 100%;
@@ -30,12 +30,12 @@ body {
 }
 
 .sidebar ul li a {
-    color: white;
+    color: #F5F5F5 ;
     text-decoration: none;
 }
 
 .sidebarname {
-    color: white;
+    color: #F5F5F5 ;
     text-decoration: none;
     font-size: 24pt;
     font-weight: bold;
@@ -52,10 +52,10 @@ body {
 .sidebar-toggle {
     display: none;
     width: 30px;
-    height: 30px;
+    height: 60px;
     font-size: 16px;
     background-color: #333;
-    color: white;
+    color: #F5F5F5 ;
     border: none;
     cursor: pointer;
     position: fixed;
@@ -104,7 +104,7 @@ body {
 .gallery-item p {
     margin-top: 10px;
     text-align: center;
-    color: white;
+    color: #F5F5F5 ;
 }
 
 .flip {
@@ -154,12 +154,41 @@ body {
 }
 
 p, h1, h2, h3, footer {
-    color: white;
+    color: #F5F5F5 ;
 }
+
+table {
+    width: calc(100%-220px);
+    text-align: center;
+    border-collapse: collapse;
+    font-family: system-ui;
+}
+tr, td {
+    color: #F5F5F5 ;
+    border: 1px solid #F5F5F5 ;
+    padding: .5ch 1ch;
+    width: 150px;
+}
+
+th {
+    background: #F5F5F5 ;
+    color: black;
+}
+
+#centertable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hr-style {
+    border: none;
+    height: 1px;
+    background-color: #2B2B2B;
+    margin: 20px 0;
+  }
 
 footer {
     padding: 20px;
-    width: calc(100%-220px);
     margin-left: 220px;
     box-sizing: border-box;
 }
