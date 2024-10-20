@@ -102,6 +102,7 @@ body {
 }
 
 .gallery-item p {
+    display: none;
     margin-top: 10px;
     text-align: center;
     color: #F5F5F5 ;
