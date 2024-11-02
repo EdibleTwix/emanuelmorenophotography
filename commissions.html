@@ -25,55 +25,43 @@
             <section id="commissions">
                 <h2>Commissions</h2>
                 <p class="ind">Contact me first to book a session. Be sure to include the date, time, and location.</p>
-                <p class="ind">After contacting me for a session, please pay via PayPal below with your selected session type. Venmo also accepted.</p>
+                <p class="ind">After contacting me for a session, please pay via PayPal or Venmo with your session.</p>
                 <br><hr class="hr-style"><br>
                 <h2>Rates</h2>
-                <table class="ind" id="centertable">
-                    <tr>
-                        <th>Price</th>
-                        <th>Time</th>
-                        <th>Photos</th>
-                    </tr>
-                    <tr>
-                        <td>$50
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_s-xclick" />
-                                <input type="hidden" name="hosted_button_id" value="XKN8HVGBJ6P9Q" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-                            </form>
-                        </td>
-                        <td>15 minutes</td>
-                        <td>45 photos</td>
-                    </tr>
-                    <tr>
-                        <td>$70
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_s-xclick" />
-                                <input type="hidden" name="hosted_button_id" value="L7ADQZ4LC86VL" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-                            </form>
-                        </td>
-                        <td>30 minutes</td>
-                        <td>100 photos</td>
-                    </tr>
-                    <tr>                  
-                        <td style="background-color: goldenrod; color: black;">$100*
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_s-xclick" />
-                                <input type="hidden" name="hosted_button_id" value="DS64FPEBFUYMY" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-                            </form>
-                        </td>
-                        <td style="background-color: goldenrod; color: black;">60 minutes</td>
-                        <td style="background-color: goldenrod; color: black;">250 photos</td>
-                      </tr>
-                </table>
+                <p class="ind">Enter either the price or time, and click "Calculate" to get the other value.</p>
+
+                <label class="ind" for="price">Price ($):</label>
+                <input type="number" id="price" step="1" min="0" placeholder="Enter price">
                 <br>
-                <small class="ind" style="color: white; text-align: left;">* Best value! Save 63.96% compared to the $50 session and gets 205 more photos (5.56 times more photos), or save 42.86% compared to the $70 session and gets 150 more photos (2.5 times more photos).</small>
+                <label class="ind" for="time">Time (minutes):</label>
+                <input type="number" id="time" step="1" min="0" placeholder="Enter time">
                 <br>
+                <br>
+                <button class="ind" onclick="calculate()">Calculate</button>
+                <br>
+                <br>
+                <p class="ind" id="result"></p>
+            
+                <script>
+                    function calculate() {
+                        const pricePerMinute = 2;
+                        let price = parseFloat(document.getElementById('price').value);
+                        let time = parseFloat(document.getElementById('time').value);
+                        const result = document.getElementById('result');
+            
+                        if (!isNaN(price) && isNaN(time)) {
+                            // Calculate time based on price
+                            time = price / pricePerMinute;
+                            result.innerText = `For $${price}, you get approximately ${time.toFixed(2)} minutes.`;
+                        } else if (isNaN(price) && !isNaN(time)) {
+                            // Calculate price based on time
+                            price = time * pricePerMinute;
+                            result.innerText = `For ${time} minutes, the price is approximately $${price.toFixed(2)}.`;
+                        } else {
+                            result.innerText = "Please enter either the price or time, not both.";
+                        }
+                    }
+                </script>
             </section>
         </main>
     </div>

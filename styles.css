@@ -196,7 +196,7 @@ body {
     z-index: 10;
 }
 
-p, h1, h2, h3, footer {
+p, h1, h2, h3, footer, label {
     color: #F5F5F5 ;
 }
 
