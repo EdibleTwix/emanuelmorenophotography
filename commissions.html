@@ -25,9 +25,7 @@
             <section id="commissions">
                 <h2>Commissions</h2>
                 <p class="ind">Contact me first to book a session. Be sure to include the date, time, and location.</p>
-                <p class="ind">After contacting me for a session, please pay via PayPal or Venmo with your session.</p>
-                <br><hr class="hr-style"><br>
-                <h2>Rates</h2>
+                <p class="ind">After contacting me for a session, please pay via Venmo with your session.</p>
                 <p class="ind">Enter either the price or time, and click "Calculate" to get the other value.</p>
 
                 <label class="ind" for="price">Price ($):</label>
@@ -38,30 +36,48 @@
                 <br>
                 <br>
                 <button class="ind" onclick="calculate()">Calculate</button>
-                <br>
-                <br>
                 <p class="ind" id="result"></p>
-            
+                <br>
+                <br>
                 <script>
                     function calculate() {
-                        const pricePerMinute = 2;
                         let price = parseFloat(document.getElementById('price').value);
                         let time = parseFloat(document.getElementById('time').value);
                         const result = document.getElementById('result');
-            
+                
                         if (!isNaN(price) && isNaN(time)) {
-                            // Calculate time based on price
-                            time = price / pricePerMinute;
+                            // Inverse of f(t) = (3/4)t + 5
+                            time = (price - 5) * (4 / 3);
                             result.innerText = `For $${price}, you get approximately ${time.toFixed(2)} minutes.`;
                         } else if (isNaN(price) && !isNaN(time)) {
-                            // Calculate price based on time
-                            price = time * pricePerMinute;
+                            // f(t) = (3/4)t + 5
+                            price = (3 / 4) * time + 5;
                             result.innerText = `For ${time} minutes, the price is approximately $${price.toFixed(2)}.`;
                         } else {
                             result.innerText = "Please enter either the price or time, not both.";
                         }
                     }
                 </script>
+
+                <br><hr class="hr-style"><br>
+                <br>
+                <section id="project1">
+                    <h2>Works</h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="images/commissions/IMG_1186.jpg" loading="lazy">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/commissions/IMG_1214.jpg" loading="lazy">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/commissions/IMG_1807.jpg" loading="lazy">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/commissions/IMG_1902.jpg" loading="lazy">
+                        </div>
+                    </div>
+                </section>
             </section>
         </main>
     </div>
