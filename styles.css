@@ -109,10 +109,6 @@ body {
     color: #F5F5F5 ;
 }
 
-.flip {
-    flex-direction: column-reverse;
-}
-
 /* Modal styling */
 .modal {
     display: none;
